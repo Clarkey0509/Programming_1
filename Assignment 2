@@ -1,0 +1,172 @@
+#include <iostream>
+#include "stdio.h"
+
+int main()
+{
+	int Mth, CS, Dcg, Ag, Sp;
+
+	printf("Enter Maths Grade: ");
+	scanf_s("%d", &Mth);
+
+	printf("Enter Construction Grade: ");
+	scanf_s("%d", &CS);
+
+	printf("Enter DCG Grade: ");
+	scanf_s("%d", &Dcg);
+
+	printf("Enter Ag. Science Grade: ");
+	scanf_s("%d", &Ag);
+
+	printf("Enter Spanish Grade: ");
+	scanf_s("%d", &Sp);
+
+	//Average
+	float avg = (Mth + CS + Dcg + Ag + Sp) / 5;
+
+	printf("Average = %.2f\n", avg);
+
+	if (Mth >= 40)
+	{
+		printf("Maths: Passed\n");
+	}
+
+		else
+		{
+			printf("Maths: Failed\n");
+		}
+
+	if (CS >= 40)
+	{
+		printf("Construction Studies: Passed\n");
+	}
+
+		else
+		{
+			printf("Construction Studies: Failed\n");
+		}
+
+	if (Dcg >= 40)
+	{
+		printf("Design & Communications Graphics: Passed\n");
+	}
+
+		else
+		{
+			printf("Design & Communications Graphics: Failed\n");
+		}
+
+	if (Ag >= 40)
+	{
+		printf("Agricultural Science: Passed\n");
+	}
+
+		else
+		{
+			printf("Agricultural Science: Failed\n");
+		}
+
+	if (Sp >= 40)
+	{
+		printf("Spanish: Passed\n");
+	}
+
+		else
+		{
+			printf("Spanish: Failed\n");
+		}
+
+	//Highest Mark code. I know there's a simpler way but it gets the job done.
+	int Highest = 1;
+
+	if (Mth >= CS)
+	{
+		if (Mth >= Dcg)
+		{
+			if (Mth >= Ag)
+			{
+				if (Mth >= Sp)
+				{
+					Highest = 1;
+				}
+			}
+		}
+	}
+
+	if (CS >= Mth)
+	{
+		if (CS >= Dcg)
+		{
+			if (CS >= Ag)
+			{
+				if (CS >= Sp)
+				{
+					Highest = 2;
+				}
+			}
+		}
+	}
+
+	if (Dcg >= Mth)
+	{
+		if (Dcg >= CS)
+		{
+			if (Dcg >= Ag)
+			{
+				if (Dcg >= Sp)
+				{
+					Highest = 3;
+				}
+			}
+		}
+	}
+
+	if (Ag >= Mth)
+	{
+		if (Ag >= CS)
+		{
+			if (Ag >= Dcg)
+			{
+				if (Ag >= Sp)
+				{
+					Highest = 4;
+				}
+			}
+		}
+	}
+
+	if (Sp >= Mth)
+	{
+		if (Sp >= CS)
+		{
+			if (Sp >= Dcg)
+			{
+				if (Sp >= Ag)
+				{
+					Highest = 5;
+				}
+			}
+		}
+	}
+
+	if (Highest == 1)
+	{
+		printf("Highest Grade: Maths\n");
+	}
+	if (Highest == 2)
+	{
+		printf("Highest Grade: Construction\n");
+	}
+	if (Highest == 3)
+	{
+		printf("Highest Grade: DCG\n");
+	}
+	if (Highest == 4)
+	{
+		printf("Highest Grade: AG Science\n");
+	}
+	if (Highest == 5)
+	{
+		printf("Highest Grade: Spanish\n");
+	}
+
+}
