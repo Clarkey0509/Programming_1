@@ -1,0 +1,25 @@
+#include "stdio.h"
+
+void main()
+{
+	int hours = 0;
+	float rate = 12.5;
+	float orate = 25;
+	float pay = 0.0;
+
+	printf("Enter hours worked: ");
+	scanf_s("%d", &hours);
+
+	if (hours < 40)
+	{
+		pay = hours * rate;
+	}
+
+	else
+	{
+		pay = 40 * rate + (hours - 40) * orate;
+	}
+	
+	printf("You have have worked %.d ", hours);
+	printf("and earned %.2f \n", pay);
+}
