@@ -1,0 +1,223 @@
+#include "stdio.h"
+
+#define TRIANGLE 1
+#define SQUARE 2
+#define RECTANGLE 3
+#define PARALLELOGRAM 4
+#define TRAPEZOID 5
+#define CIRCLE 6
+#define ELLIPSE 7
+#define SECTOR 8
+
+int main()
+{
+	int shape = 0;
+	float value1 = 0;
+	float value2 = 0;
+	float value3 = 0;
+	float area = 0;
+
+	printf("Area Calculator\n Enter Choice:\n 1 <Triangle>\n 2 <Square>\n 3 <Rectangle>\n 4 <Parallelogram>\n 5 <Trapezoid>\n 6 <Circle>\n 7 <Ellipse>\n 8 <Sector>\n");
+	scanf_s("%d", &shape);
+
+	switch (shape)
+	{
+	case TRIANGLE:
+		printf("Enter height:");
+		scanf_s("%f", &value1);
+
+		if (value1 == 0)
+		{
+			printf("Invalid");
+		}
+
+		else {
+			printf("\nEnter base:");
+			scanf_s("%f", &value2);
+
+			if (value2 == 0)
+			{
+				printf("Invalid");
+			}
+
+			else
+			{
+				area = 0.5 * value1 * value2;
+				printf("Area = %.2f", area);
+			}
+		}
+		break;
+
+	case SQUARE:
+		printf("Enter length:");
+		scanf_s("%f", &value1);
+
+		if (value1 == 0)
+		{
+			printf("Invalid");
+		}
+
+		else
+		{
+			area = value1 * value1;
+
+			printf("Area = %.2f", area);
+		}
+		break;
+
+	case RECTANGLE:
+
+		printf("Enter height:");
+		scanf_s("%f", &value1);
+
+		printf("\nEnter width:");
+		scanf_s("%f", &value2);
+
+		area = value1 * value2;
+		printf("Area = %.2f", area);
+		break;
+
+	case PARALLELOGRAM:
+
+		printf("Enter height:");
+		scanf_s("%f", &value1);
+
+		if (value1 == 0)
+		{
+			printf("Invalid");
+		}
+
+		else
+		{
+			printf("\nEnter base:");
+			scanf_s("%f", &value2);
+
+			if (value1 == 0)
+			{
+				printf("Invalid");
+			}
+
+			else
+			{
+				area = value1 * value2;
+				printf("Area = %.2f", area);
+			}
+		}
+		break;
+
+	case TRAPEZOID:
+
+		printf("Enter height:");
+		scanf_s("%f", &value1);
+
+		if (value1 == 0)
+		{
+			printf("Invalid");
+		}
+
+		else
+		{
+			printf("\nEnter top width:");
+			scanf_s("%f", &value2);
+
+			if (value1 == 0)
+			{
+				printf("Invalid");
+			}
+
+			else
+			{
+				printf("\nEnter bottom width:");
+				scanf_s("%f", &value3);
+
+				if (value1 == 0)
+				{
+					printf("Invalid");
+				}
+
+				else
+				{
+					area = (0.5 * (value2 + value3)) * value1;
+					printf("Area = %.2f", area);
+				}
+			}
+		}
+		break;
+
+	case CIRCLE:
+
+		printf("Enter radius:");
+		scanf_s("%f", &value1);
+
+		if (value1 == 0)
+		{
+			printf("Invalid");
+		}
+
+		else
+		{
+			area = 3.14159265358979323846 * value1 * value1;
+			printf("Area = %.2f", area);
+		}
+		break;
+
+	case ELLIPSE:
+
+		printf("Enter minor axis:");
+		scanf_s("%f", &value1);
+
+		if (value1 == 0)
+		{
+			printf("Invalid");
+		}
+
+		else
+		{
+			printf("\nEnter major axis:");
+			scanf_s("%f", &value2);
+
+			if (value1 == 0)
+			{
+				printf("Invalid");
+			}
+
+			else
+			{
+				area = 3.14159265358979323846 * value1 * value2;
+				printf("Area = %.2f", area);
+			}
+		}
+		break;
+
+	case SECTOR:
+
+		printf("Enter radius:");
+		scanf_s("%f", &value1);
+
+		if (value1 == 0)
+		{
+			printf("Invalid");
+		}
+
+		else
+		{
+			printf("\nEnter angle(in radians):");
+			scanf_s("%f", &value2);
+
+			if (value1 == 0)
+			{
+				printf("Invalid");
+			}
+
+			else
+			{
+
+				area = 0.5 * value1 * value1 * value2;
+				printf("Area = %.2f", area);
+
+			}
+		}
+		break;
+		return 0;
+	}
+}
