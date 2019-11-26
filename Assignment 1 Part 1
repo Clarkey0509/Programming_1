@@ -1,0 +1,13 @@
+#include "stdio.h"
+void main()
+{
+	printf("\n");
+	printf("Welcome");
+	printf("\n");
+	printf("\n");
+	printf("to");
+	printf("\n");
+	printf("\n");
+	printf("Galway");
+	printf("\n");
+}
