@@ -1,0 +1,55 @@
+#include "stdio.h"
+#include "math.h"
+
+void main()
+{
+	double numbers[10];
+	double avg = 0.0, total = 0.0, min = 10000.0, max = 0.0, result = 0.0;
+	int i = 0;
+
+	for (i = 0; i <= 9; i++)
+	{
+		printf("Enter number %d: ", i + 1);
+		scanf_s("%lf", &result);
+
+		if (result == 0)
+		{
+			printf("End of inputs\n");
+
+			if (i == 0)
+			{
+				printf("Error: No inputs\n");
+				break;
+			}
+			break;
+		}
+			if (result < min)
+			{
+				min = result;
+			}
+
+			if (result > max)
+			{
+				max = result;
+			}
+
+			numbers[i] = result;
+			total = total + result;
+		}
+
+	if (i == 0)
+	{
+		avg = 0;
+	}
+	else
+	{ 
+		avg = total / (double)i;
+		printf("Average = %lf\n", avg);
+		printf("Minimum = %lf\n", min);
+		printf("Maximum = %lf\n", max);
+	}
+		
+
+
+
+}
