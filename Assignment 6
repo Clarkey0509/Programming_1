@@ -1,0 +1,70 @@
+#include <iostream>
+#include <stdio.h>
+#include <math.h>
+
+int Doors = 0, coats = 0;
+double area = 0, paint = 0, m2perlitre = 0, TotalWallArea = 0;
+
+double calculateArea(double height, double width)
+{
+	area = height * width;
+	return area;
+}
+
+double calculatePaint(double area, int coats, double m2PerLitre)
+{
+	paint = (area * coats) / (m2PerLitre);
+	return paint;
+}
+
+int main()
+{
+	int Ans = 1, i = 0;
+	double Height = 0, Width = 0;
+
+	 
+	while (Ans != 0)
+	{
+		printf("Enter Wall Height (m): ");
+		scanf_s("%lf", &Height);
+		printf("Enter Wall Width (m): ");
+		scanf_s("%lf", &Width);
+		calculateArea(Height, Width);
+		TotalWallArea = TotalWallArea + area;
+		printf("\nMore Walls?(yes = 1/no = 0): ");
+		scanf_s("%d", &Ans);
+	 }
+
+	 printf("\nTotal Wall Area = %.2f\n\n", TotalWallArea);
+	 printf("How many doors are there in the room (double doors = 2)?:");
+	 scanf_s("%d", &Doors);
+
+	 TotalWallArea = TotalWallArea - (Height * (double)Doors);
+	 printf("\nTotal Wall Area minus doors = %.2lf\n\n", TotalWallArea);
+
+	 printf("Are there any windows?(yes = 1/no = 0)");
+	 scanf_s("%d", &Ans);
+
+	 while (Ans != 0)
+	 {
+		 printf("Enter Window Height: ");
+		 scanf_s("%lf", &Height);
+		 printf("Enter Window Width: ");
+		 scanf_s("%lf", &Width);
+		 calculateArea(Height, Width);
+		 TotalWallArea = TotalWallArea - area;
+		 printf("\nAre there more windows?(yes = 1, no = 0): ");
+		 scanf_s("%d", &Ans);
+	 }
+
+	 printf("\nTotal Wall Area minus windows = %.2f\n\n", TotalWallArea);
+	 printf("What is the coverage in m2 per litre of your paint?:");
+
+	 scanf_s("%lf", &m2perlitre);
+
+	 printf("\nHow many coats do you want?:");
+	 scanf_s("%d", &coats);
+
+	 calculatePaint(TotalWallArea, coats, m2perlitre);
+	 printf("\nYou will need %.1lf, or %d to the nearest litre, of paint ", paint, (int)paint);
+}
